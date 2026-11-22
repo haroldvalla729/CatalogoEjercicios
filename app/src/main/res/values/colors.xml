@@ -2,8 +2,41 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="azul_principal">#0D63C7</color>
-    <color name="fondo_pantalla">#F6F8FB</color>
-    <color name="fondo_imagen">#EFF4FA</color>
-    <color name="borde_tarjeta">#E2E8F0</color>
+
+    <!-- Primary Brand Colors -->
+    <color name="colorPrimary">#1E3A8A</color>
+    <color name="colorPrimaryDark">#172554</color>
+    <color name="colorAccent">#2563EB</color>
+
+    <!-- Background and Surface -->
+    <color name="colorBackground">#F8FAFC</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorSurfaceVariant">#F1F5F9</color>
+    <color name="colorBorder">#E2E8F0</color>
+
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#0F172A</color>
+    <color name="colorTextSecondary">#64748B</color>
+    <color name="colorTextMuted">#94A3B8</color>
+
+    <!-- Stats & Highlights -->
+    <color name="statBoxBg">#EFF6FF</color>
+    <color name="statBoxBorder">#BFDBFE</color>
+    <color name="statNumberColor">#1D4ED8</color>
+
+    <!-- Category Badge Colors -->
+    <color name="badge_piernas_bg">#EEF2FF</color>
+    <color name="badge_piernas_text">#3730A3</color>
+    <color name="badge_pecho_bg">#FEF2F2</color>
+    <color name="badge_pecho_text">#991B1B</color>
+    <color name="badge_abdomen_bg">#FFFBEB</color>
+    <color name="badge_abdomen_text">#92400E</color>
+    <color name="badge_brazos_bg">#F0F9FF</color>
+    <color name="badge_brazos_text">#0369A1</color>
+    <color name="badge_hombros_bg">#FAF5FF</color>
+    <color name="badge_hombros_text">#6B21A8</color>
+    <color name="badge_pantorrillas_bg">#F0FDF4</color>
+    <color name="badge_pantorrillas_text">#166534</color>
+    <color name="badge_gluteos_bg">#FDF2F8</color>
+    <color name="badge_gluteos_text">#9D174D</color>
 </resources>

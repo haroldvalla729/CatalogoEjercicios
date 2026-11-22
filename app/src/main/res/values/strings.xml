@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">CatalogoEjercicios</string>
+    <string name="app_name">Catálogo de Ejercicios</string>
+    <string name="catalogo_titulo">Catálogo de Ejercicios Físicos</string>
+    <string name="catalogo_subtitulo">Selecciona un ejercicio para ver su información detallada</string>
+    <string name="btn_ver_detalles">Ver detalles</string>
+    <string name="btn_regresar">Regresar al catálogo</string>
+    <string name="detalle_titulo">Detalle del Ejercicio</string>
+    <string name="label_grupo_muscular">Grupo muscular</string>
+    <string name="label_series">Series</string>
+    <string name="label_repeticiones">Repeticiones</string>
+    <string name="label_descripcion">Descripción general</string>
+    <string name="label_indicaciones">Indicaciones para su realización</string>
+    <string name="formato_grupo_item">Grupo: %1$s</string>
+    <string name="formato_grupo_detalle">Grupo muscular: %1$s</string>
+    <string name="formato_series_detalle">%1$d series</string>
+    <string name="formato_repeticiones_detalle">%1$d reps</string>
 </resources>

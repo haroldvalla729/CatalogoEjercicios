@@ -1,114 +1,297 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detalle_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo_pantalla"
-    android:fillViewport="true">
+    android:background="@color/colorBackground"
+    tools:context=".DetalleEjercicioActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="20dp">
-
-    <!-- Título -->
-    <TextView
+    <!-- Header / Barra superior -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/detalleHeaderCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Detalles del ejercicio"
-        android:textColor="@color/azul_principal"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:paddingBottom="16dp" />
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Imagen -->
-    <ImageView
-        android:id="@+id/imgDetalleEjercicio"
-        android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:background="@color/fondo_imagen"
-        android:contentDescription="Imagen del ejercicio"
-        android:padding="12dp"
-        android:scaleType="fitCenter" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp">
 
-    <!-- Nombre -->
-    <TextView
-        android:id="@+id/txtDetalleNombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="#0F172A"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/btnHeaderBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/btn_regresar"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/white" />
 
-    <!-- Grupo muscular -->
-    <TextView
-        android:id="@+id/txtDetalleGrupo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/azul_principal"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvHeaderTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/detalle_titulo"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <!-- Series y repeticiones -->
-    <TextView
-        android:id="@+id/txtDetalleSeries"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textColor="#334155"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        </LinearLayout>
 
-    <!-- Descripción -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Descripción"
-        android:textColor="#0F172A"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+    </com.google.android.material.card.MaterialCardView>
 
-    <TextView
-        android:id="@+id/txtDetalleDescripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:textColor="#334155"
-        android:textSize="15sp" />
+    <!-- ScrollView para contenido adaptable -->
+    <ScrollView
+        android:id="@+id/scrollViewDetalle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalleHeaderCard">
 
-    <!-- Indicaciones -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Indicaciones"
-        android:textColor="#0F172A"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <TextView
-        android:id="@+id/txtDetalleIndicaciones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:textColor="#334155"
-        android:textSize="15sp" />
+            <!-- Tarjeta principal con Imagen, Nombre y Grupo Muscular -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/colorBorder"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/colorSurface">
 
-    <!-- Regresar -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRegresar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Regresar"
-        app:cornerRadius="20dp"
-        app:backgroundTint="@color/azul_principal" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-</LinearLayout>
+                    <!-- Imagen representativa -->
+                    <ImageView
+                        android:id="@+id/ivDetalleImagen"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:contentDescription="@string/detalle_titulo"
+                        android:scaleType="fitCenter"
+                        tools:src="@drawable/ic_sentadillas" />
 
-</ScrollView>
+                    <!-- Nombre del ejercicio -->
+                    <TextView
+                        android:id="@+id/tvDetalleNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:text="Sentadillas" />
+
+                    <!-- Grupo muscular -->
+                    <TextView
+                        android:id="@+id/tvDetalleGrupoMuscular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_badge"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="Grupo muscular: Piernas" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Fila de estadísticas (Series y Repeticiones) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <!-- Box Series -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat_box"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingVertical="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_series"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleSeries"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/statNumberColor"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="3 series" />
+
+                </LinearLayout>
+
+                <!-- Box Repeticiones -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat_box"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingVertical="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_repeticiones"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleRepeticiones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/statNumberColor"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="12 reps" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Sección Descripción -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/colorBorder"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/colorSurface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_descripcion"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="14sp"
+                        tools:text="Ejercicio fundamental para el tren inferior..." />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Sección Indicaciones -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/colorBorder"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/colorSurface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_indicaciones"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleIndicaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="14sp"
+                        tools:text="Coloca los pies al ancho de los hombros, mantén la espalda recta..." />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Botón Regresar al catálogo -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegresarAlCatalogo"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/btn_regresar"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_arrow_back"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

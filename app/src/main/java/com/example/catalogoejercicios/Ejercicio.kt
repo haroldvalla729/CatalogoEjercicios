@@ -1,5 +1,7 @@
 package com.example.catalogoejercicios
 
+import java.io.Serializable
+
 data class Ejercicio(
     val nombre: String,
     val grupoMuscular: String,
@@ -7,5 +9,5 @@ data class Ejercicio(
     val repeticiones: Int,
     val descripcion: String,
     val indicaciones: String,
-    val imagen: Int
-)
+    val imagen: Int,
+) : Serializable
