@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/fondo_pantalla"
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detalles del ejercicio"
+        android:textColor="@color/azul_principal"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <!-- Imagen -->
+    <ImageView
+        android:id="@+id/imgDetalleEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@color/fondo_imagen"
+        android:contentDescription="Imagen del ejercicio"
+        android:padding="12dp"
+        android:scaleType="fitCenter" />
+
+    <!-- Nombre -->
+    <TextView
+        android:id="@+id/txtDetalleNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#0F172A"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!-- Grupo muscular -->
+    <TextView
+        android:id="@+id/txtDetalleGrupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/azul_principal"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Series y repeticiones -->
+    <TextView
+        android:id="@+id/txtDetalleSeries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#334155"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Descripción -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Descripción"
+        android:textColor="#0F172A"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDetalleDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="#334155"
+        android:textSize="15sp" />
+
+    <!-- Indicaciones -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Indicaciones"
+        android:textColor="#0F172A"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDetalleIndicaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="#334155"
+        android:textSize="15sp" />
+
+    <!-- Regresar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Regresar"
+        app:cornerRadius="20dp"
+        app:backgroundTint="@color/azul_principal" />
+
+</LinearLayout>
+
+</ScrollView>
