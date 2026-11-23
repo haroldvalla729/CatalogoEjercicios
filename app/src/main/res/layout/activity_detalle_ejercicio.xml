@@ -94,7 +94,7 @@
                         android:layout_height="160dp"
                         android:contentDescription="@string/detalle_titulo"
                         android:scaleType="fitCenter"
-                        tools:src="@drawable/ic_sentadillas" />
+                        tools:src="@drawable/img_sentadillas" />
 
                     <!-- Nombre del ejercicio -->
                     <TextView
